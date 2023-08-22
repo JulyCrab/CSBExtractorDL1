@@ -5,7 +5,7 @@ from configparser import ConfigParser
 
 print(" ")
 print("Tool made by MrJuly for Dying Light 1")
-print("Before using this tool please check the READ.ME if you haven't")
+print("Before using this tool please check the READ.ME in the HELP folder if you haven't checked it out")
 print("Please setup this file before using or you will get an error while trying to execute it")
 print(" ")
 print(" ")

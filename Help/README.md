@@ -1,4 +1,4 @@
-# Made and optimized by MrJuly for Dying Light 1 with a better documentation and much more simple and quick script
+# Made and optimized by MrJuly for Dying Light 1 with a better documentation and much more simple and efficient script
 
 # Description
 This is a python script which automatically extracts every .csb in the Data folder found in DyingLight/DW when browsing local files of the game.

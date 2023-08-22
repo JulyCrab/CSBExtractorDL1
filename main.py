@@ -3,44 +3,60 @@ import sys
 from pathlib import Path
 from configparser import ConfigParser
 
+# Display information to the user
 print(" ")
-print("Tool made by MrJuly for Dying Light 1")
-print("Before using this tool please check the READ.ME in the HELP folder if you haven't checked it out")
-print("Please setup this file before using or you will get an error while trying to execute it")
-print(" ")
+print("\nTool made by MrJuly for Dying Light 1")
+print("Before using this tool, please check the README in the HELP folder if you haven't already")
+print("Please set up this file before using it, or you will encounter errors\n")
 print(" ")
 
-# This will indicate the references, this references must be in the same folder for them to work
-
+# Load settings from the configuration file
 settings = ConfigParser()
 settings.read('settings.ini')
 
+# Extract settings from the configuration file
 QuickBMSDir = settings.get('Config', 'quickbmsdir')
 Output = settings.get('Config', 'outputdir')
 ExtractDir = settings.get('Config', 'extractdir')
 BMSScript = settings.get('Config', 'bmsscript')
 BMSexe = settings.get('Config', 'quickbmsexe')
 
-if not Path(QuickBMSDir).is_dir(): raise ValueError("QuickBMS Directory not found")
-if not Path(Output).is_dir(): raise ValueError("Output Directory not found")
-if not Path(ExtractDir).is_dir(): raise ValueError("Directory from wich we will extract not found")
+# Check if required directories and files exist
+required_paths = [
+    QuickBMSDir, Output, ExtractDir,
+    QuickBMSDir + '/' + BMSScript,
+    QuickBMSDir + '/' + BMSexe
+]
 
-if not Path(QuickBMSDir + '/' + BMSScript).is_file(): raise ValueError("BMS Script in: " + QuickBMSDir + "not found")
-if not Path(QuickBMSDir + '/' + BMSexe).is_file(): raise ValueError("QuickBMS Exe in: " + QuickBMSDir + "not found")
+for path in required_paths:
+    if not Path(path).exists():
+        raise ValueError(f"Path not found: {path}")
 
-if not Path(ExtractDir).glob('*.csb'):
-    raise ValueError("There were no .csb files in the directory: " + ExtractDir)
+# Check for .csb files in the extraction directory
+csb_files = list(Path(ExtractDir).glob('*.csb'))
+if not csb_files:
+    raise ValueError(f"No .csb files found in: {ExtractDir}")
 
-for csb_file in Path(ExtractDir).glob('*.csb'):
-    if Path(Output + "/" + csb_file.name).exists():
-        if Path(Output + "/" + csb_file.name).glob('*.fsb'):
-            for fsb_file in Path(Output + "/" + csb_file.name).glob('*.fsb'):            
-                fsb_file.unlink()
+# Process each .csb file
+for csb_file in csb_files:
+    output_csb_dir = Path(Output) / csb_file.name
 
-    if not Path(Output + "/" + csb_file.name).exists():
-        Path(Output + "/" + csb_file.name).mkdir()
+    # Clean up existing .fsb files if they exist
+    for fsb_file in output_csb_dir.glob('*.fsb'):
+        fsb_file.unlink()
+
+    # Create output directory if it doesn't exist
+    output_csb_dir.mkdir(exist_ok=True)
+
+    # Run QuickBMS to extract files
+    extraction_command = [
+        QuickBMSDir + "/" + BMSexe,
+        QuickBMSDir + "/" + BMSScript,
+        str(csb_file),
+        str(output_csb_dir)
+    ]
     
-    result = subprocess.run([QuickBMSDir + "/" + BMSexe, QuickBMSDir + "/" + BMSScript, ExtractDir + "/" + csb_file.name, Output + "/" + csb_file.name], capture_output=True)
+    result = subprocess.run(extraction_command, capture_output=True)
     
     sys.stdout.buffer.write(result.stdout)
     sys.stderr.buffer.write(result.stderr)

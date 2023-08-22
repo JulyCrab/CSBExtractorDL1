@@ -6,8 +6,7 @@ This is a python script which automatically extracts every .csb in the Data fold
 # Apps Required:
 QuickBMS can be found here: https://drive.google.com/file/d/1bpT4Slq6szFzzx6wTU2RWtJH7RnCCjjj/view?usp=sharing
 Python can be found here: https://www.python.org/downloads/ (I originally made this script with Python v3.11.4 but it may be different over time as Python continues to update)
-CMD can be found by typing "command prompt" in your system search bar 
-(In case you don't see the CMD please check the FAQ)
+CMD can be found by typing "command prompt" in your system search bar (In case you don't see the CMD please check the FAQ)
 Notepad++ can be found here: https://notepad-plus-plus.org/downloads/
 
 # How to setup

@@ -1,4 +1,4 @@
-#Made and optimized by MrJuly for Dying Light 1 with a better documentation and much more simple and quick script
+# Made and optimized by MrJuly for Dying Light 1 with a better documentation and much more simple and quick script
 
 # Description
 This is a python script which automatically extracts every .csb in the Data folder found in DyingLight/DW when browsing local files of the game.
@@ -21,7 +21,7 @@ outputdir = Output folder in which every .csb file will extract
 
 2. Click save and close Notepad++
 
-#PIP Installs and How to install them
+# PIP Installs and How to install them
 
 Step 1.
 
@@ -47,7 +47,7 @@ Now that everything is setup run the python script in the CMD or the Official Te
 in the specified folder location!
 
 
-#FAQ
+# FAQ
 
 1. I can't see CMD, how do I continue?
 

@@ -13,8 +13,8 @@ Notepad++ can be found here: https://notepad-plus-plus.org/downloads/
 1. Change the contents of the settings.ini file in this folder
 ```
 quickbmsdir = Directory with QuickBMS
-bmsscript = BMS Script name, example: script.bms
-quickbmsexe = QuickBMS exe name, example: quickbms.exe
+bmsscript = No need to update this
+quickbmsexe = No need to update this
 extractdir = Directory from which the .csb files will be extracted
 outputdir = Output folder in which every .csb file will extract
 ```

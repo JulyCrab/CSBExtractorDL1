@@ -1,10 +1,10 @@
-# Dying Light (script 0.3)
-# script for QuickBMS http://quickbms.aluigi.org
+# Dying Light CSB Extractor Script for the tool made by JulyCrab
+# script made for the CSB Extractor tool for Dying Light made by JulyCrab
 
 get EXT extension
 if EXT == "csb"
     
-    # http://zenhax.com/viewtopic.php?f=6&t=587
+    # Hi there
     goto 0x40
     get INFOSIZE long
     get FILES long

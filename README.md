@@ -1,11 +1,14 @@
-# Description
-Quick and simple CSB Extractor for Dying Light 1
+# CSB Extractor for Dying Light 1
 
-# Important
-Please do not skip the README inside the "Help" as
-it contains important info on how to do various
-things and how to setup the extractor. 
+Welcome to the CSB Extractor for Dying Light 1! This tool provides a quick and simple way to extract CSB files for your game.
 
+## Important Information
 
-# End
-Thanks for downloading this Extractor
+Please **do not skip** the README file located inside the "Help" folder. It contains crucial information on how to:
+
+- Set up the extractor
+- Perform various tasks
+
+## Thank You
+
+Thank you for downloading the CSB Extractor. Enjoy your experience modding!

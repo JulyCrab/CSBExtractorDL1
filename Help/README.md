@@ -41,7 +41,7 @@ Step 3.
 
 To install configparser please execute "pip install configparser" in the CMD or the Official Terminal app from Microsoft Store, wait until it downloads and you are basically done!
 
-#Final Step
+# Final Step
 
 Now that everything is setup run the python script in the CMD or the Official Terminal app from Microsoft Store using "python main.py" and you should see the output folder full of the extracted files which your requested
 in the specified folder location!
